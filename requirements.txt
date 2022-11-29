@@ -1,0 +1,4 @@
+Django==4.1.3
+inertia-django==0.4.1
+django-vite==2.0.2
+django-js-routes==0.2.0
