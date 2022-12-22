@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     InertiaProgress.init({ showSpinner: true });
 
+    const routePlugin = {
+        install: (app, _options) => {
+            app.config.globalProperties.$route = window.reverseUrl
+        }
+    }
+
     createInertiaApp({
         resolve: async name => {
             const page = (await pages[`./pages/${name}.vue`]()).default;
@@ -22,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setup({ el, App, props, plugin }) {
             createApp({render: () => h(App, props)})
                 .use(plugin)
+                .use(routePlugin)
                 .mount(el)
         },
     });

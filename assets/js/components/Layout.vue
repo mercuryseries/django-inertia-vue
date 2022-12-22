@@ -5,8 +5,8 @@ import { Link } from '@inertiajs/inertia-vue3';
 <template>
     <nav>
         <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/contact/">Contact</Link></li>
+            <li><Link :href="$route('home')">Home</Link></li>
+            <li><Link :href="$route('contact')">Contact</Link></li>
         </ul>
     </nav>
     <div class="containa">
